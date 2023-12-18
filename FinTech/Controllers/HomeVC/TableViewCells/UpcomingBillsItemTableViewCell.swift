@@ -42,7 +42,7 @@ class UpcomingBillsItemTableViewCell: UITableViewCell {
     func bind(title: String, time: String, icon: String){
         nameLabel.text = title
         timeLabel.text = time
-        iconImageView.image = UIImage(systemName: "icon")
+        iconImageView.image = UIImage(systemName: icon)
     }
 }
 

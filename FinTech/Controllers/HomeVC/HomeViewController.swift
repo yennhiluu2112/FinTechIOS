@@ -62,7 +62,7 @@ class HomeViewController: UIViewController {
     }
     
     func setUpNavBar(){
-        title = "Home"
+        title = "Fin Tech"
         
         let leftButton = UIBarButtonItem(title: "Left", style: .plain, target: self, action: #selector(tap))
         navigationItem.leftBarButtonItem = leftButton
@@ -71,9 +71,6 @@ class HomeViewController: UIViewController {
         let bookMarkItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(tap))
                             
         navigationItem.rightBarButtonItems = [searchItem, bookMarkItem]
-        
-        self.navigationController?.navigationBar.backgroundColor = .cyan
-
     }
 
 }
@@ -114,7 +111,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         case .SavingsCell:
            return 220
         case .UpcomingBillsCell:
-            return 500
+            return 300
         case .OverviewCell:
             return 80
         }
