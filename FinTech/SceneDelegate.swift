@@ -16,7 +16,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+        let window = UIWindow(windowScene: windowScene)
+        
+        let homeVC = HomeViewController()
+        let homeNavi = UINavigationController(rootViewController: homeVC)
+        homeNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .recents, tag: 0)
+        homeNavi.tabBarItem.badgeValue = "99"
+        homeNavi.tabBarItem.badgeColor = .blue
+        
+        let settingsVC = SettingsViewController()
+        let settingsNavi = UINavigationController(rootViewController: settingsVC)
+        settingsNavi.tabBarItem = UITabBarItem(tabBarSystemItem: .more, tag: 1)
+
+        //tabbar controller
+        let tabbarController = UITabBarController()
+        tabbarController.viewControllers = [homeNavi, settingsNavi]
+        tabbarController.tabBar.tintColor = .red
+        
+        window.rootViewController = tabbarController
+        
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -50,3 +71,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 }
 
+extension SceneDelegate: UITabBarControllerDelegate {
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("Selected Tab : \(tabBarController.selectedIndex)")
+    }
+}

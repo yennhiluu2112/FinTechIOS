@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="SavingsCollectionViewCell" customModule="FinTech" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="247" height="140"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="247" height="140"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zl6-Jd-jxE">
+                        <rect key="frame" x="10" y="10" width="33" height="16"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jzx-sz-EjU">
+                        <rect key="frame" x="217" y="15" width="20" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="20" id="pXM-Ns-rdP"/>
+                            <constraint firstAttribute="height" constant="20" id="sde-GU-dJd"/>
+                        </constraints>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" image="chevron.right" catalog="system">
+                            <color key="baseForegroundColor" systemColor="labelColor"/>
+                        </buttonConfiguration>
+                    </button>
+                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Pl1-0a-aRs">
+                        <rect key="frame" x="10" y="126" width="227" height="4"/>
+                    </progressView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNG-8r-gYk">
+                        <rect key="frame" x="10" y="36" width="42" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Pl1-0a-aRs" secondAttribute="trailing" constant="10" id="9Qi-rW-8Dc"/>
+                <constraint firstItem="jzx-sz-EjU" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="Q5v-VN-s4i"/>
+                <constraint firstItem="BNG-8r-gYk" firstAttribute="top" secondItem="Zl6-Jd-jxE" secondAttribute="bottom" constant="10" id="T7T-hT-iTT"/>
+                <constraint firstItem="Pl1-0a-aRs" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="U14-wv-Qd4"/>
+                <constraint firstAttribute="trailing" secondItem="jzx-sz-EjU" secondAttribute="trailing" constant="10" id="ZRl-a4-LFp"/>
+                <constraint firstItem="BNG-8r-gYk" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="a0G-8c-Abu"/>
+                <constraint firstItem="Zl6-Jd-jxE" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="gMS-Ul-tlt"/>
+                <constraint firstItem="Zl6-Jd-jxE" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="jlG-QF-qrJ"/>
+                <constraint firstAttribute="bottom" secondItem="Pl1-0a-aRs" secondAttribute="bottom" constant="10" id="uXu-LR-I66"/>
+            </constraints>
+            <size key="customSize" width="247" height="140"/>
+            <connections>
+                <outlet property="moneyLabel" destination="BNG-8r-gYk" id="xAE-DL-izf"/>
+                <outlet property="nameLabel" destination="Zl6-Jd-jxE" id="cjM-Os-5Nh"/>
+                <outlet property="nextBtn" destination="jzx-sz-EjU" id="zso-s6-Kmx"/>
+                <outlet property="progressView" destination="Pl1-0a-aRs" id="lgk-7H-3dF"/>
+            </connections>
+            <point key="canvasLocation" x="170" y="20"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="chevron.right" catalog="system" width="97" height="128"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
